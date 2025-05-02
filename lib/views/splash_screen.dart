@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:shh_food/main.dart'; // Importante para el Timer
+import 'package:shh_food/views/home/my_home_page.dart'; // La dejamos aquí por ahora
+import 'package:shh_food/views/welcome_screen.dart'; // Importamos WelcomeScreen
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,16 +12,15 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  
   @override
   void initState() {
     super.initState();
     // Simulamos carga de Appwrite o cualquier otra inicialización
     Timer(const Duration(seconds: 3), () {
-      // Después de 3 segundos navegamos a Login (por ahora HomePage)
+      // Después de 3 segundos navegamos a WelcomeScreen
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const MyHomePage(title: '¡Shh! Food')),
+        MaterialPageRoute(builder: (context) => const WelcomeScreen()),
       );
     });
   }

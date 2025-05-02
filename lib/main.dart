@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/splash_screen.dart'; // Importamos la pantalla splash
+import 'package:shh_food/views/splash_screen.dart';
+import 'package:shh_food/views/welcome_screen.dart'; // Importa WelcomeScreen
 
 void main() {
   runApp(const MyApp());
@@ -11,33 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '¡Shh! Food', // Nombre de la app
+      title: '¡Shh! Food',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF4B0082)),
         useMaterial3: true,
       ),
-      debugShowCheckedModeBanner: false, // Quitamos la banderita de debug
-      home: const SplashScreen(), // Aquí arrancamos en el SplashScreen
-    );
-  }
-}
-class MyHomePage extends StatelessWidget {
-  final String title;
-
-  const MyHomePage({super.key, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Bienvenido a ¡Shh! Food',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      home: const SplashScreen(), // Inicialmente mostramos el SplashScreen
     );
   }
 }
